@@ -21,7 +21,7 @@ public class Main {
                     System.exit(0);
                 }
                 case "echo" -> {
-                    System.out.println(statement);
+                    System.out.println(inputArr[1]);
                 }
                 case "type" -> {
                     if(inputArr[1].equals("cat")) {
