@@ -15,8 +15,8 @@ public class Main {
                     String statement = inputParser.getStatement();
                     if(statement == null) {
                         System.out.println(input.getInput() + ": command not found");
-                    } else {
-                        System.out.println(inputParser.getStatement());
+                    } else if(statement.length() > 0) {
+                        System.out.println(statement);
                     }
                 }
                 default -> System.out.println(input.getInput() + ": command not found");
