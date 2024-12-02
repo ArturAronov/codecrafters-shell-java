@@ -25,7 +25,6 @@ public class Main {
                     System.out.println(statement);
                 }
                 case "type" -> {
-                    System.out.println(statement);
                     if(statement.equals("cat")) {
                         System.out.println("cat is /bin/cat");
                     }
