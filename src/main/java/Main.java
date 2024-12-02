@@ -29,9 +29,9 @@ public class Main {
                         System.out.println("cat is /bin/cat");
                     }
                     else if(Arrays.stream(commands).anyMatch(statement::equals)) {
-                        System.out.println(command + " is a shell builtin");
+                        System.out.println(statement + " is a shell builtin");
                     } else {
-                        System.out.println(command + ": not found");
+                        System.out.println(statement + ": not found");
                     }
                 }
                 default -> {
