@@ -15,8 +15,7 @@ public class Main {
             }
 
             String[] inputArr = input.split(" ", 2);
-            String command = inputArr[0];
-            String statement = inputArr[1];
+            String command = inputArr[0];;
             switch (command) {
                 case "exit 0" -> {
                     System.exit(0);
@@ -25,13 +24,13 @@ public class Main {
                     System.out.println(statement);
                 }
                 case "type" -> {
-                    if(statement.equals("cat")) {
+                    if(inputArr[1].equals("cat")) {
                         System.out.println("cat is /bin/cat");
                     }
-                    else if(Arrays.stream(commands).anyMatch(statement::equals)) {
-                        System.out.println(statement + " is a shell builtin");
+                    else if(Arrays.stream(commands).anyMatch(inputArr[1]::equals)) {
+                        System.out.println(inputArr[1] + " is a shell builtin");
                     } else {
-                        System.out.println(statement + ": not found");
+                        System.out.println(inputArr[1] + ": not found");
                     }
                 }
                 default -> {
