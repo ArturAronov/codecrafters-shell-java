@@ -32,7 +32,7 @@ public class Main {
                     else if(Arrays.stream(commands).anyMatch(statement::equals)) {
                         System.out.println(command + " is a shell builtin");
                     } else {
-                        System.out.println("type invalid_command");
+                        System.out.println(command + ": not found");
                     }
                 }
                 default -> {
