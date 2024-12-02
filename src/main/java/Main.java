@@ -3,23 +3,26 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        while(true) {
-            System.out.print("$ ");
-            Input input = new Input();
-            String userInput = input.getInput();
+        Scanner scanner = new Scanner(System.in);
 
-            switch(userInput) {
-                case "exit 0" -> System.exit(0);
-                case String s when s.startsWith("echo") -> {
-                    InputParser inputParser = new InputParser(s, "echo");
-                    String statement = inputParser.getStatement();
-                    if(statement == null) {
-                        System.out.println(input.getInput() + ": command not found");
-                    } else if(statement.length() > 0) {
-                        System.out.println(statement);
-                    }
+        while (true) {
+            System.out.print("$ ");
+            String input = scanner.nextLine();
+            if (input.equals("exit 0")) {
+                System.exit(0);
+            }
+
+            String[] commands = input.split(" ", 2);
+            switch (commands[0]) {
+                case "exit 0" -> {
+                    System.exit(0);
                 }
-                default -> System.out.println(input.getInput() + ": command not found");
+                case "echo" -> {
+                    System.out.println(commands[1]);
+                }
+                default -> {
+                    System.out.println(commands[0] + ": command not found");
+                }
             }
         }
     }
