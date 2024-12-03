@@ -31,8 +31,6 @@ public class Main {
                         System.out.println(inputArr[1] + " is a shell builtin");
                     } else if(availablePath != null) {
                         System.out.println(inputArr[1] + " is " + availablePath);
-                    } else if(inputArr[1].equals("cat")) {
-                        System.out.println("cat is /bin/cat");
                     } else {
                         System.out.println(inputArr[1] + ": not found");
                     }
