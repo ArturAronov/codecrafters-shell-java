@@ -32,8 +32,8 @@ public class Main {
                     String availablePath = pathWalker.getAvailablePath(path, inputArr[1]);
                     if(availablePath != null) {
                         System.out.println(inputArr[1] + ": is " + availablePath);
-//                    } else if(inputArr[1].equals("cat")) {
-//                        System.out.println("cat is /bin/cat");
+                    } else if(inputArr[1].equals("cat")) {
+                        System.out.println("cat is /bin/cat");
                     } else if(Arrays.stream(commands).anyMatch(inputArr[1]::equals)) {
                         System.out.println(inputArr[1] + " is a shell builtin");
                     } else {
