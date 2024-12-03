@@ -27,7 +27,7 @@ public class Main {
                     PathWalker pathWalker = new PathWalker();
                     String availablePath = pathWalker.getAvailablePath(inputArr[1]);
                     if(availablePath != null) {
-                        System.out.println(inputArr[1] + ": is " + availablePath);
+                        System.out.println(inputArr[1] + " is " + availablePath);
                     } else if(inputArr[1].equals("cat")) {
                         System.out.println("cat is /bin/cat");
                     } else if(Arrays.stream(commands).anyMatch(inputArr[1]::equals)) {
