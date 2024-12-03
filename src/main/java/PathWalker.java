@@ -27,6 +27,7 @@ public class PathWalker {
         try {
             String executablePath = getAvailablePath(command);
             if(executablePath == null) {
+                System.out.println("NULL!!!!");
                 return null;
             }
 
