@@ -8,7 +8,6 @@ public class PathWalker {
             String[] dirs = path.split("/");
             Boolean hasDir = Arrays.stream(dirs).anyMatch(dir::equals);
             if(hasDir) {
-                System.out.println(path);
                 this.returnPath = path;
                 break;
             }
