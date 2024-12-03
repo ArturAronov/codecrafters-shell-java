@@ -1,7 +1,6 @@
 import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
+import java.nio.file.Files;
 
 public class PathWalker {
     private final String[] paths;
@@ -13,7 +12,6 @@ public class PathWalker {
     public String getAvailablePath(String dir) {
         for(String path: paths) {
             Path fullPath = Path.of(path, dir);
-//            System.out.println(path + " -> " + fullPath + " -> " + Files.isRegularFile(fullPath));
 
             if(Files.isRegularFile(fullPath)){
                 return fullPath.toString();
