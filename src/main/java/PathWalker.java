@@ -1,22 +1,25 @@
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 
 public class PathWalker {
-    public String returnPath;
+    private final String[] paths;
 
-    public String getAvailablePath(String[] paths, String dir) {
+    public PathWalker() {
+        this.paths = System.getenv("PATH").split(File.pathSeparator);
+    }
+
+    public String getAvailablePath(String dir) {
         for(String path: paths) {
-            String[] dirs = path.split("/");
-            Boolean hasDir = Arrays.stream(dirs).anyMatch(dir::equals);
-            if(hasDir) {
-                this.returnPath = path;
-                break;
-            }
+            Path fullPath = Path.of(path, dir);
+//            System.out.println(path + " -> " + fullPath + " -> " + Files.isRegularFile(fullPath));
 
-            if(returnPath != null){
-                break;
+            if(Files.isRegularFile(fullPath)){
+                return fullPath.toString();
             }
         }
 
-        return returnPath;
+        return null;
     }
 }

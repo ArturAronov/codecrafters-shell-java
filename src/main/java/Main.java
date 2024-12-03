@@ -6,10 +6,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String[] commands = {"echo", "exit", "type"};
-        String[] path = System.getenv("PATH").split(":");
-//        for(String p: path) {
-//            System.out.println(p);
-//        }
 
         while (true) {
             System.out.print("$ ");
@@ -29,7 +25,7 @@ public class Main {
                 }
                 case "type" -> {
                     PathWalker pathWalker = new PathWalker();
-                    String availablePath = pathWalker.getAvailablePath(path, inputArr[1]);
+                    String availablePath = pathWalker.getAvailablePath(inputArr[1]);
                     if(availablePath != null) {
                         System.out.println(inputArr[1] + ": is " + availablePath);
                     } else if(inputArr[1].equals("cat")) {
