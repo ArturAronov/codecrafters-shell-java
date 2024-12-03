@@ -36,7 +36,13 @@ public class Main {
                     }
                 }
                 default -> {
-                    System.out.println(command + ": command not found");
+                    PathWalker pathWalker = new PathWalker();
+                    String output = pathWalker.runExecutable(command);
+                    if(output == null) {
+                        System.out.println(command + ": command not found");
+                    } else {
+                        System.out.println(output);
+                    }
                 }
             }
         }
