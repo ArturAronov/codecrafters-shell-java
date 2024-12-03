@@ -32,6 +32,7 @@ public class PathWalker {
 
             Process process = new ProcessBuilder(executablePath).start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            System.out.println(reader.readLine());
             StringBuilder output = new StringBuilder();
             String line;
 
