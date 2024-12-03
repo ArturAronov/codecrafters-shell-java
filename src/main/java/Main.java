@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String[] commands = {"echo", "exit", "type"};
-        System.out.println(args);
         String[] path = System.getenv("PATH").split(":");
 //        for(String p: path) {
 //            System.out.println(p);
