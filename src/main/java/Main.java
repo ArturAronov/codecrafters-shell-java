@@ -41,8 +41,8 @@ public class Main {
                     if(path == null) {
                         System.out.println(command + ": command not found");
                     } else {
-//                        String fullPath = path + input.substring(command.length());
-                        Process p = Runtime.getRuntime().exec(input.split(" "));
+                        String fullPath = path + input.substring(command.length());
+                        Process p = Runtime.getRuntime().exec(fullPath.split(" "));
                         p.getInputStream().transferTo(System.out);
                     }
                 }
