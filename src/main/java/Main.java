@@ -37,7 +37,7 @@ public class Main {
                 }
                 default -> {
                     PathWalker pathWalker = new PathWalker();
-                    String path = pathWalker.getAvailablePath(inputArr[1]);
+                    String path = pathWalker.getAvailablePath(command);
                     if(path == null) {
                         System.out.println(command + ": command not found");
                     } else {
