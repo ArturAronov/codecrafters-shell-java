@@ -41,7 +41,10 @@ public class Main {
                     if(output == null) {
                         System.out.println(command + ": command not found");
                     } else {
-                        System.out.println(output);
+                        String path = pathWalker.getAvailablePath(inputArr[1]);
+                        String fullPath = path + input.substring(command.length());
+                        Process p = Runtime.getRuntime().exec(fullPath.split(" "));
+                        p.getInputStream().transferTo(System.out);
                     }
                 }
             }
