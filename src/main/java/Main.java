@@ -37,13 +37,12 @@ public class Main {
                 }
                 default -> {
                     PathWalker pathWalker = new PathWalker();
-                    String output = pathWalker.runExecutable(command);
-                    if(output == null) {
+                    String path = pathWalker.getAvailablePath(inputArr[1]);
+                    if(path == null) {
                         System.out.println(command + ": command not found");
                     } else {
-                        String path = pathWalker.getAvailablePath(inputArr[1]);
-                        String fullPath = path + input.substring(command.length());
-                        Process p = Runtime.getRuntime().exec(fullPath.split(" "));
+//                        String fullPath = path + input.substring(command.length());
+                        Process p = Runtime.getRuntime().exec(input.split(" "));
                         p.getInputStream().transferTo(System.out);
                     }
                 }
